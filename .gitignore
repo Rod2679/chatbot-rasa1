@@ -1,0 +1,25 @@
+# Entornos virtuales
+venv/
+.venv/
+env/
+.env/
+
+# Archivos de Python compilados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Configuraciones de IDE
+.vscode/
+
+# Archivos de base de datos y temporales
+*.db
+*.sqlite3
+*.log
+
+# Archivos del sistema operativo
+.DS_Store
+
+# Archivos de Rasa generados
+.rasa/

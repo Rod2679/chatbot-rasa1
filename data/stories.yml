@@ -1,0 +1,133 @@
+version: "3.1"
+
+stories:
+
+- story: camino feliz
+  steps:
+    - intent: saludo
+    - action: utter_saludo
+    - intent: estado_ánimo_positivo
+    - action: utter_estado_ánimo_positivo
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
+- story: camino triste afirmativo
+  steps:
+    - intent: saludo
+    - action: utter_saludo
+    - intent: estado_ánimo_negativo
+    - action: utter_estado_ánimo_negativo
+    - action: utter_did_that_help
+    - intent: afirmación
+    - action: utter_afirmación
+
+- story: camino triste negativo con búsqueda de apoyo
+  steps:
+    - intent: saludo
+    - action: utter_saludo
+    - intent: estado_ánimo_negativo
+    - action: utter_estado_ánimo_negativo
+    - action: utter_did_that_help
+    - intent: negación
+    - action: utter_negación
+    - intent: necesito_apoyo
+    - action: utter_necesito_apoyo
+
+- story: usuario con ansiedad
+  steps:
+    - intent: ansiedad
+    - action: utter_ansiedad
+    - intent: técnicas_relajación
+    - action: utter_técnicas_relajación
+    - intent: afirmación
+    - action: utter_afirmación
+
+- story: ansiedad con rechazo de técnicas
+  steps:
+    - intent: ansiedad
+    - action: utter_ansiedad
+#  - action: utter_did_that_help
+    - intent: negación
+    - action: utter_negación
+    - intent: necesito_apoyo
+    - action: utter_necesito_apoyo
+
+- story: usuario con depresión
+  steps:
+    - intent: saludo
+    - action: utter_saludo
+    - intent: depresión
+    - action: utter_depresión
+    - intent: necesito_apoyo
+    - action: utter_necesito_apoyo
+
+- story: usuario con autoestima baja
+  steps:
+    - intent: autoestima_baja
+    - action: utter_autoestima_baja
+    - intent: afirmación
+    - action: utter_afirmación
+
+- story: consulta sobre relaciones
+  steps:
+    - intent: relaciones
+    - action: utter_relaciones
+
+- story: problema de sueño
+  steps:
+    - intent: dormir
+    - action: utter_dormir
+    - intent: técnicas_relajación
+    - action: utter_técnicas_relajación
+
+- story: usuario con estrés
+  steps:
+    - intent: estrés
+    - action: utter_estrés
+    - intent: técnicas_relajación
+    - action: utter_técnicas_relajación
+
+- story: falta de motivación
+  steps:
+    - intent: motivación
+    - action: utter_motivación
+
+- story: motivación y afirmación de cambio
+  steps:
+    - intent: motivación
+    - action: utter_motivación
+    - intent: afirmación
+    - action: utter_afirmación
+
+- story: usuario agradece
+  steps:
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
+- story: despedida
+  steps:
+    - intent: despedida
+    - action: utter_despedida
+
+- story: usuario desafía al bot
+  steps:
+    - intent: bot_desafio
+    - action: utter_bot_desafio
+
+- story: usuario menciona auto-lesión
+  steps:
+    - intent: auto_lesión
+    - action: utter_auto_lesión
+    - action: utter_necesito_apoyo
+
+- story: estado negativo y necesidad de apoyo
+  steps:
+    - intent: estado_ánimo_negativo
+    - action: utter_estado_ánimo_negativo
+    - intent: necesito_apoyo
+    - action: utter_necesito_apoyo
+
+- story: usuario hace consulta psicológica general
+  steps:
+    - intent: psicologia_general
+    - action: utter_psicologia_general

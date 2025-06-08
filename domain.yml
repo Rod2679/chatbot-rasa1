@@ -1,0 +1,133 @@
+version: "3.1"
+
+intents:
+  - saludo
+  - despedida
+  - afirmación
+  - negación
+  - estado_ánimo_positivo
+  - estado_ánimo_negativo
+  - ansiedad
+  - depresión
+  - estrés
+  - autoestima_baja
+  - necesito_apoyo
+  - auto_lesión
+  - relaciones
+  - dormir
+  - motivación
+  - bot_desafio
+  - técnicas_relajación
+  - psicologia_general
+  - agradecimiento
+
+responses:
+  utter_saludo:
+    - text: "Hola, ¿cómo te sientes hoy?"
+    - text: "¡Hola! Estoy aquí para escucharte."
+    - text: "Bienvenido. ¿En qué puedo ayudarte hoy?"
+
+  utter_despedida:
+    - text: "Adiós. Recuerda que no estás solo/a."
+    - text: "Nos vemos pronto. Cuídate mucho."
+    - text: "Hasta luego. Estoy aquí cuando me necesites."
+
+  utter_afirmación:
+    - text: "Me alegra escuchar eso."
+    - text: "Perfecto, sigamos entonces."
+    - text: "Muy bien, gracias por confirmar."
+
+  utter_negación:
+    - text: "Entiendo. ¿Quieres hablar de otra cosa?"
+    - text: "Está bien, dime cómo te sientes."
+    - text: "No hay problema, aquí estoy para escucharte."
+
+  utter_estado_ánimo_positivo:
+    - text: "¡Qué bueno que te sientas así! Disfruta de ese estado de ánimo."
+    - text: "Me alegra escuchar eso. Sigue cuidando tu bienestar."
+    - text: "Eso suena genial. Gracias por compartirlo."
+
+  utter_estado_ánimo_negativo:
+    - text: "Siento que te sientas así. ¿Quieres hablar de ello?"
+    - text: "Estoy aquí para ti. Cuéntame qué pasa."
+    - text: "Lo siento mucho. Estoy aquí para escucharte sin juzgarte."
+
+  utter_ansiedad:
+    - text: "Parece que estás experimentando ansiedad. ¿Quieres que te recomiende una técnica de respiración?"
+    - text: "Lo que sientes es válido. ¿Te gustaría hablar más sobre lo que te causa ansiedad?"
+    - text: "Respira profundo. Estoy aquí contigo, podemos trabajar juntos para calmarte."
+  
+  utter_did_that_help:
+    - text: "¿Eso te ayudó un poco?"
+    - text: "¿Te sirvió lo que hablamos?"
+    - text: "¿Te sentiste mejor con eso?"
+
+
+  utter_depresión:
+    - text: "Siento que te sientas así. Hablar de ello puede ayudarte a liberar un poco esa carga."
+    - text: "Recuerda que no estás solo/a. ¿Quieres compartir más sobre lo que sientes?"
+    - text: "Gracias por confiar en mí. Podemos afrontar esto juntos."
+
+  utter_estrés:
+    - text: "El estrés puede ser abrumador. ¿Te gustaría que te comparta una técnica de relajación?"
+    - text: "Es normal sentirse así. Puedes contarme más si lo deseas."
+    - text: "Entiendo que estés estresado/a. Estoy aquí para ayudarte."
+
+  utter_autoestima_baja:
+    - text: "Todos tenemos valor. Estoy aquí para recordártelo."
+    - text: "Puedes contar conmigo. ¿Quieres hablar más sobre lo que sientes?"
+    - text: "Eres importante. No estás solo/a en esto."
+
+  utter_necesito_apoyo:
+    - text: "Gracias por compartir lo que sientes. Estoy aquí contigo."
+    - text: "Te escucho. Cuéntame más, por favor."
+    - text: "Vamos paso a paso. Estoy para apoyarte."
+
+  utter_auto_lesión:
+    - text: "Lamento que te sientas así. Si estás en peligro, por favor busca ayuda inmediata con un profesional o llama a una línea de emergencia."
+    - text: "Tu vida tiene valor. ¿Quieres que busquemos formas de ayudarte?"
+    - text: "Estoy aquí para escucharte. No estás solo/a. Hay ayuda disponible."
+
+  utter_relaciones:
+    - text: "Las relaciones pueden ser complicadas. Cuéntame lo que estás viviendo."
+    - text: "Estoy aquí para ayudarte a procesar lo que sientes."
+    - text: "Es bueno que quieras hablar de ello. Podemos explorarlo juntos."
+
+  utter_dormir:
+    - text: "Dormir es muy importante para tu salud mental. ¿Quieres que te recomiende una rutina para dormir mejor?"
+    - text: "¿Sueles tener este problema seguido? Puedo ayudarte con consejos prácticos."
+    - text: "Estoy aquí para escucharte. ¿Te gustaría hablar más sobre esto?"
+
+  utter_motivación:
+    - text: "A veces es difícil encontrar motivación. ¿Quieres que exploremos juntos tus metas?"
+    - text: "Estoy aquí para ayudarte a recuperar esa energía."
+    - text: "Podemos trabajar en pequeños pasos para que vuelvas a sentirte motivado/a."
+
+  utter_bot_desafio:
+    - text: "Soy un asistente virtual diseñado para ayudarte. Aunque no soy humano, estoy aquí para escucharte."
+    - text: "Soy un bot, pero me importan tus emociones y bienestar."
+    - text: "Soy una inteligencia artificial creada para apoyarte en temas emocionales."
+
+  utter_técnicas_relajación:
+    - text: "Una buena técnica es la respiración 4-7-8: inhala por 4 segundos, retén por 7, y exhala por 8. ¿Quieres otra técnica?"
+    - text: "Puedes probar la meditación guiada. ¿Te gustaría un enlace a una?"
+    - text: "Salir a caminar, escuchar música suave o practicar mindfulness puede ayudarte mucho."
+
+  utter_psicologia_general:
+    - text: "La ansiedad es una emoción común, pero si interfiere con tu vida diaria, es bueno buscar apoyo profesional."
+    - text: "La terapia psicológica es un proceso para conocerte mejor y resolver dificultades emocionales. ¿Te interesa saber más?"
+    - text: "La salud mental es tan importante como la física. ¿Sobre qué tema quieres saber más?"
+
+  utter_agradecimiento:
+    - text: "Gracias a ti por confiar en mí."
+    - text: "Me alegra saber que pude ayudarte."
+    - text: "Estoy aquí siempre que lo necesites."
+
+actions:
+  - action_técnica_relajación
+  - action_consejo_sueño
+  - action_motivación_personalizada
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

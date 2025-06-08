@@ -1,0 +1,104 @@
+version: "3.1"
+
+rules:
+
+- rule: Decir adiós cuando el usuario se despide
+  steps:
+    - intent: despedida
+    - action: utter_despedida
+
+- rule: Decir que soy un bot cuando el usuario lo pregunta
+  steps:
+    - intent: bot_desafio
+    - action: utter_bot_desafio
+
+- rule: Responder a un saludo
+  steps:
+    - intent: saludo
+    - action: utter_saludo
+
+- rule: Responder si el usuario agradece
+  steps:
+    - intent: agradecimiento
+    - action: utter_agradecimiento
+
+- rule: Responder a estado de ánimo positivo
+  steps:
+    - intent: estado_ánimo_positivo
+    - action: utter_estado_ánimo_positivo
+
+# ⚠️ Esta regla se eliminó por generar conflicto con las historias
+# - rule: Responder a estado de ánimo negativo
+#   steps:
+#     - intent: estado_ánimo_negativo
+#     - action: utter_estado_ánimo_negativo
+
+- rule: Responder a ansiedad
+  steps:
+    - intent: ansiedad
+    - action: utter_ansiedad
+#    - action: utter_did_that_help
+
+# ⚠️ Esta regla fue eliminada: la historia ya maneja utter_did_that_help después
+
+- rule: Ofrecer técnicas de relajación
+  steps:
+    - intent: técnicas_relajación
+    - action: utter_técnicas_relajación
+
+# ⚠️ Estas dos se eliminan para evitar conflicto con historias que tienen secuencias específicas
+# - rule: Responder a afirmación
+#   steps:
+#     - intent: afirmación
+#     - action: utter_afirmación
+
+# - rule: Responder a negación
+#   steps:
+#     - intent: negación
+#     - action: utter_negación
+
+- rule: Responder a depresión
+  steps:
+    - intent: depresión
+    - action: utter_depresión
+
+- rule: Ofrecer apoyo emocional cuando el usuario lo pide
+  steps:
+    - intent: necesito_apoyo
+    - action: utter_necesito_apoyo
+
+- rule: Responder a autoestima baja
+  steps:
+    - intent: autoestima_baja
+    - action: utter_autoestima_baja
+
+- rule: Responder a relaciones
+  steps:
+    - intent: relaciones
+    - action: utter_relaciones
+
+- rule: Responder a problemas de sueño
+  steps:
+    - intent: dormir
+    - action: utter_dormir
+
+- rule: Responder a estrés
+  steps:
+    - intent: estrés
+    - action: utter_estrés
+
+- rule: Responder a motivación
+  steps:
+    - intent: motivación
+    - action: utter_motivación
+
+- rule: Responder a auto-lesión
+  steps:
+    - intent: auto_lesión
+    - action: utter_auto_lesión
+    - action: utter_necesito_apoyo
+
+- rule: Responder a consulta psicológica general
+  steps:
+    - intent: psicologia_general
+    - action: utter_psicologia_general

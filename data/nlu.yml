@@ -1,0 +1,303 @@
+version: "3.1"
+
+nlu:
+- intent: saludo
+  examples: |
+    - hola
+    - holaaaaaa
+    - buenas tardes
+    - buenos días
+    - buenas noches
+    - qué tal
+    - cómo estás
+    - cómo te va
+    - cómo andas
+    - hola, ¿cómo estás?
+    - hey
+    - holi
+    - buen día
+    - saludos
+    - qué onda
+    - qué hay de nuevo
+    - qué cuentas
+    - cómo amaneciste
+    - qué gusto verte
+
+- intent: despedida
+  examples: |
+    - adiós
+    - hasta luego
+    - nos vemos
+    - hasta pronto
+    - que tengas un buen día
+    - cuídate
+    - me voy
+    - gracias, adiós
+    - bye
+    - chao
+    - hasta la próxima
+    - hablamos luego
+    - fue un gusto
+    - gracias por todo
+    - nos vemos pronto
+
+- intent: afirmación
+  examples: |
+    - sí
+    - claro
+    - por supuesto
+    - efectivamente
+    - correcto
+    - así es
+    - totalmente
+    - estoy de acuerdo
+    - vale
+    - sí, eso quiero
+    - sí, por favor
+    - exacto
+    - justo eso
+
+- intent: negación
+  examples: |
+    - no
+    - para nada
+    - en absoluto
+    - no creo
+    - no lo sé
+    - no estoy seguro
+    - no quiero
+    - negativo
+    - no es así
+    - no me interesa
+    - no tengo ganas
+    - no deseo eso
+    - no gracias
+
+- intent: estado_ánimo_positivo
+  examples: |
+    - me siento bien
+    - estoy feliz
+    - estoy animado
+    - tengo esperanza
+    - hoy fue un buen día
+    - me siento tranquilo
+    - estoy relajado
+    - estoy motivado
+    - estoy en paz
+    - todo va bien
+    - estoy contento
+    - hoy me siento optimista
+    - me siento con energía
+    - estoy en armonía
+
+- intent: estado_ánimo_negativo
+  examples: |
+    - estoy triste
+    - me siento vacío
+    - no tengo ganas de nada
+    - me siento solo
+    - estoy cansado emocionalmente
+    - me siento deprimido
+    - no tengo energía
+    - estoy desmotivado
+    - me siento ansioso
+    - no encuentro sentido a nada
+    - estoy llorando
+    - tengo un nudo en la garganta
+    - me siento muy mal
+    - no puedo más
+    - me siento abandonado
+    - me siento olvidado
+    - siento que nadie me entiende
+
+- intent: ansiedad
+  examples: |
+    - tengo ansiedad
+    - siento que me ahogo
+    - me cuesta respirar
+    - mi pecho está apretado
+    - me tiemblan las manos
+    - tengo taquicardia
+    - siento que algo malo va a pasar
+    - no puedo dejar de pensar
+    - mi mente no para
+    - me siento muy nervioso
+    - tengo pensamientos repetitivos
+    - me cuesta concentrarme
+    - tengo ataques de ansiedad
+    - todo me da miedo
+    - tengo pensamientos catastróficos
+    - me pongo muy ansioso en público
+    - no controlo mis emociones
+
+- intent: depresión
+  examples: |
+    - estoy deprimido
+    - nada me interesa
+    - no tengo motivación
+    - no quiero salir de la cama
+    - todo me da igual
+    - no tengo esperanza
+    - me siento como una carga
+    - me siento inútil
+    - me duele el alma
+    - lloro sin motivo
+    - no encuentro sentido a la vida
+    - me siento atrapado
+    - siento que todo está perdido
+    - he perdido interés en todo
+    - no quiero vivir así
+    - me siento en un pozo
+
+- intent: estrés
+  examples: |
+    - tengo mucho estrés
+    - me siento abrumado
+    - no puedo con tanto
+    - tengo muchas cosas en la cabeza
+    - no puedo concentrarme
+    - tengo dolor de cabeza por el estrés
+    - estoy al límite
+    - todo me irrita
+    - no tengo tiempo para nada
+    - siento presión constante
+    - estoy tenso todo el tiempo
+    - me siento sobrecargado
+    - no tengo paz mental
+    - todo me molesta últimamente
+
+- intent: autoestima_baja
+  examples: |
+    - no sirvo para nada
+    - no me gusto
+    - no valgo
+    - me odio
+    - me comparo con los demás
+    - siento que soy un fracaso
+    - no me tengo confianza
+    - no puedo con esto
+    - no soy suficiente
+    - nadie me quiere
+    - no me siento capaz
+    - siempre me equivoco
+    - no merezco nada
+    - soy un desastre
+    - me siento feo
+    - no tengo nada bueno
+
+- intent: necesito_apoyo
+  examples: |
+    - necesito ayuda
+    - ¿puedes escucharme?
+    - quiero hablar con alguien
+    - no sé qué hacer
+    - necesito orientación
+    - me siento perdido
+    - ¿puedo contarte algo?
+    - me siento solo y necesito hablar
+    - necesito que alguien me escuche
+    - me gustaría recibir apoyo
+    - estoy confundido
+    - estoy colapsando emocionalmente
+
+- intent: auto_lesión
+  examples: |
+    - me lastimé
+    - tengo pensamientos de hacerme daño
+    - me corté
+    - a veces me pego
+    - no quiero seguir así
+    - tengo pensamientos oscuros
+    - he pensado en morir
+    - no quiero seguir viviendo
+    - no le encuentro sentido a mi vida
+    - me odio tanto que me daño
+    - pienso en desaparecer
+    - he intentado hacerme daño
+
+- intent: relaciones
+  examples: |
+    - tengo problemas con mi pareja
+    - no me llevo bien con mis padres
+    - discuto mucho con mi familia
+    - me siento solo en mi relación
+    - mis amigos no me entienden
+    - me siento aislado socialmente
+    - siento que nadie me apoya
+    - me siento rechazado
+    - estoy en una relación tóxica
+    - mis relaciones siempre terminan mal
+
+- intent: dormir
+  examples: |
+    - no puedo dormir
+    - tengo insomnio
+    - me despierto en la madrugada
+    - tengo pesadillas
+    - mi sueño no es reparador
+    - me cuesta conciliar el sueño
+    - doy vueltas toda la noche
+    - me desvelo pensando en todo
+    - me levanto más cansado
+    - estoy agotado y no descanso
+
+- intent: motivación
+  examples: |
+    - no tengo ganas de hacer nada
+    - me cuesta empezar cosas
+    - quiero mejorar pero no sé cómo
+    - necesito motivación
+    - siento que estoy estancado
+    - no tengo fuerzas para seguir
+    - quiero ser constante
+    - no tengo disciplina
+    - me cuesta mantener el ritmo
+    - pierdo la motivación rápido
+
+- intent: bot_desafio
+  examples: |
+    - eres humano?
+    - eres un robot?
+    - estoy hablando con una persona?
+    - eres real?
+    - quién eres?
+    - qué eres tú?
+    - eres un programa?
+    - me está hablando una máquina?
+
+- intent: técnicas_relajación
+  examples: |
+    - cómo me relajo
+    - dame ejercicios de respiración
+    - técnicas para calmarme
+    - cómo bajar la ansiedad
+    - cómo tranquilizarme
+    - necesito calmar mi mente
+    - cómo me controlo cuando estoy nervioso
+    - ejercicios para sentirme mejor
+
+- intent: psicologia_general
+  examples: |
+    - qué es la ansiedad
+    - qué es la depresión
+    - cómo funciona la terapia
+    - cuándo debo ir al psicólogo
+    - cómo saber si necesito ayuda
+    - qué hace un psicólogo
+    - es normal sentirse así
+    - la salud mental es importante
+    - cómo pedir ayuda psicológica
+    - qué tipos de terapia existen
+
+- intent: agradecimiento
+  examples: |
+    - gracias
+    - te agradezco mucho
+    - me has ayudado
+    - gracias por escucharme
+    - gracias por tu apoyo
+    - muchas gracias
+    - me sirvió mucho esto
+    - gracias por estar aquí
+    - estoy agradecido
+    - qué bueno poder hablar contigo

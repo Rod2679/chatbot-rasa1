@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat de Apoyo Psicológico</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .chat-container {
+      width: 100%;
+      max-width: 420px;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .chat-header {
+      background-color: #00796b;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .chat-header h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .chat-header p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background-color: #f1f8f9;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+      padding: 10px;
+      background-color: #ffffff;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px 15px;
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .chat-input button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      margin-left: 10px;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .chat-input button:hover {
+      background-color: #004d40;
+    }
+
+    .user-message,
+    .bot-message {
+      margin-bottom: 10px;
+      max-width: 80%;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .user-message {
+      align-self: flex-end;
+      background-color: #d1f5e0;
+    }
+
+    .bot-message {
+      align-self: flex-start;
+      background-color: #e0e0e0;
+    }
+
+    @media (max-width: 576px) {
+      .chat-container {
+        height: 100vh;
+        border-radius: 0;
+      }
+
+      .chat-header h3 {
+        font-size: 1.2rem;
+      }
+
+      .chat-input input {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+  <!-- Íconos -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="chat-container">
+    <div class="chat-header">
+      <h3><i class="fas fa-heartbeat me-2"></i> Tu Compañero de Apoyo</h3>
+      <p>Estoy aquí para escucharte.</p>
+    </div>
+
+    <div class="chat-messages" id="chatbox">
+      <div class="bot-message">Hola, ¿en qué puedo ayudarte hoy?</div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Escribe tu mensaje..." onkeypress="handleKey(event)" />
+      <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script>
+    const socketUrl = "http://localhost:5005"; // Cambia esto al URL de tu bot Rasa online
+    const socket = io(socketUrl);
+
+    const chatbox = document.getElementById("chatbox");
+    const userInput = document.getElementById("userInput");
+
+    socket.on("connect", () => {
+      console.log("Conectado al servidor Rasa");
+      socket.emit("session_request", { session_id: "usuario" });
+    });
+
+    socket.on("bot_uttered", (data) => {
+      if (data.text) {
+        appendMessage(data.text, "bot");
+      }
+    });
+
+    function appendMessage(message, sender) {
+      const msg = document.createElement("div");
+      msg.classList.add(sender === "user" ? "user-message" : "bot-message");
+      msg.textContent = message;
+      chatbox.appendChild(msg);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    function sendMessage() {
+      const message = userInput.value.trim();
+      if (message === "") return;
+
+      appendMessage(message, "user");
+      socket.emit("user_uttered", {
+        message: message,
+        session_id: "usuario"
+      });
+
+      userInput.value = "";
+    }
+
+    function handleKey(event) {
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    }
+  </script>
+
+  <!-- Socket.IO -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js" integrity="sha384-+qRbgJlnA0H23mgguIP+GRfBi7XZn0eyKiEXeq0kUigzW3Xcs3qNulzAY3Ri5v48" crossorigin="anonymous"></script>
+
+</body>
+</html>
